@@ -2,23 +2,25 @@
 const [form] = document.forms;
 const ask = form.askbtn;
 const question = form.questionbox;
-const showquestion = form.showquestion;
 const answer = document.getElementById("answers");
 const ball = document.getElementById("ball");
 
 
 ask.addEventListener('click',function(e) {
     if(!question.value) {
-      form.askbtn.disabled = true;
+      alert("Please provide a question.");
+      e.preventDefault();
       return;
     }
     e.preventDefault();  
+     ask.value = "ask again";
      document.getElementById('showquestion').innerHTML = `YOUR QUESTION: ${question.value}`;
      document.getElementById('showquestion').style.visibility = 'visible';
      displayImage();
     
   });
 
+  ball.addEventListener("click", clearInput);
 
   function displayImage() {
 
@@ -50,6 +52,9 @@ ask.addEventListener('click',function(e) {
     }
 
   
-function clearInput() {
-    question.value = "";
-  }
+    function clearInput () {
+      document.getElementById('showquestion').style.visibility = 'hidden';
+      question.value = "";
+      ask.value = "ask...";
+    
+    }
