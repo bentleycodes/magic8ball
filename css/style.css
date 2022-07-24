@@ -13,16 +13,27 @@ body {
 
 }
 
+ 
 #answers {
-    visibility: hidden;
     display: block;
-    margin: auto;
+}
+
+
+
+#ball {
+    display: block;
+    visibility: hidden;
+    width: 400px;
+    padding-left: 500px;
+    margin-bottom: -270px;
+    margin-top: -80px;
+    
 }
 
 #form {
     display: block;
     margin-left: 480px;
-    padding-top: 300px;
+    padding-top: 400px;
     padding-bottom: 50px;
 }
 
