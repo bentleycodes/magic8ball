@@ -8,7 +8,7 @@ const ball = document.getElementById("ball");
 
 
 ask.addEventListener('click',function(e) {
-    if(!question.value) {
+    if(!question.value || question.value.length < 4) {
       alert("Please provide a question.");
       e.preventDefault();
       return;
