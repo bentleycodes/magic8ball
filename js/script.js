@@ -57,6 +57,6 @@ ask.addEventListener('click',function(e) {
       document.getElementById('showquestion').style.visibility = 'hidden';
       question.value = "";
       ask.value = "ask...";
-      ball.src = "https://github.com/bentleycodes/magic8ball/blob/edits4/masterball.png?raw=true";
+      ball.src = "https://github.com/bentleycodes/magic8ball/blob/main/8ball-images/masterball.png?raw=true";
     
     }
