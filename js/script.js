@@ -6,6 +6,7 @@ const answer = document.getElementById("answers");
 const ball = document.getElementById("ball");
 
 
+
 ask.addEventListener('click',function(e) {
     if(!question.value) {
       alert("Please provide a question.");
@@ -56,5 +57,6 @@ ask.addEventListener('click',function(e) {
       document.getElementById('showquestion').style.visibility = 'hidden';
       question.value = "";
       ask.value = "ask...";
+      ball.src = "https://github.com/bentleycodes/magic8ball/blob/edits4/masterball.png?raw=true";
     
     }
