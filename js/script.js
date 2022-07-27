@@ -1,12 +1,11 @@
-
+// Declare variables to use.
 const [form] = document.forms;
 const ask = form.askbtn;
 const question = form.questionbox;
-const answer = document.getElementById("answers");
-const ball = document.getElementById("ball");
 
 
 
+// Event listener for the ask button. Includes an edge case for invalid questions & will show question + ball image.
 ask.addEventListener('click',function(e) {
     if(!question.value || question.value.length < 4) {
       alert("Please provide a question.");
@@ -15,14 +14,26 @@ ask.addEventListener('click',function(e) {
     }
     e.preventDefault();  
      ask.value = "ask again";
-     document.getElementById('showquestion').innerHTML = `YOUR QUESTION: ${question.value}`;
-     document.getElementById('showquestion').style.visibility = 'visible';
+     showquestion.innerHTML = `YOUR QUESTION: ${question.value}`;
+     showquestion.style.visibility = 'visible';
      displayImage();
-    
+     ball.animate(
+      [
+        {transform: 'translateY(-10%)'},
+        {transition: '1s ease'}
+   ], {
+     duration: 500,
+     iterations: 1
+   }  
+   );
   });
 
-  ball.addEventListener("click", clearInput);
 
+// Event listener for ball; Will clear the inputs & revert ball image. Hides ball after 9 seconds.
+ball.addEventListener("click", clearInput);
+
+
+// Function to get a random image then display. 
   function displayImage() {
 
     var imgArray = [];
@@ -52,11 +63,15 @@ ask.addEventListener('click',function(e) {
         ball.style.visibility = 'visible';
     }
 
-  
+  // Function to clear input on ball image click, revert image, then hide after 9 seconds.
     function clearInput () {
-      document.getElementById('showquestion').style.visibility = 'hidden';
+      showquestion.style.visibility = 'hidden';
       question.value = "";
       ask.value = "ask...";
       ball.src = "https://github.com/bentleycodes/magic8ball/blob/main/8ball-images/masterball.png?raw=true";
+
+      setTimeout(() => {
+        ball.style.visibility = 'hidden';
+      }, "9000");
     
     }
