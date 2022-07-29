@@ -1,19 +1,12 @@
-// Declare variables to use.
-const [form] = document.forms;
-const ask = form.askbtn;
-const question = form.questionbox;
-
-
-
 // Event listener for the ask button. Includes an edge case for invalid questions & will show question + ball image.
-ask.addEventListener('click',function(e) {
+askbtn.addEventListener('click',function(e) {
     if(!question.value || question.value.length < 4) {
       alert("Please provide a question.");
       e.preventDefault();
       return;
     }
     e.preventDefault();  
-     ask.value = "ask again";
+     askbtn.value = "ask again";
      showquestion.innerHTML = `YOUR QUESTION: ${question.value}`;
      showquestion.style.visibility = 'visible';
      displayImage();
@@ -37,7 +30,7 @@ ball.addEventListener("click", clearInput);
   function displayImage() {
 
     var imgArray = [];
-    index = 0;
+   // index = 0;
     imgArray[0] = new Image();
     imgArray[0].src = 'https://github.com/bentleycodes/magic8ball/blob/main/8ball-images/asiseeitball.png?raw=true',
     imgArray[1] = new Image();
@@ -67,7 +60,7 @@ ball.addEventListener("click", clearInput);
     function clearInput () {
       showquestion.style.visibility = 'hidden';
       question.value = "";
-      ask.value = "ask...";
+      askbtn.value = "ask...";
       ball.src = "https://github.com/bentleycodes/magic8ball/blob/main/8ball-images/masterball.png?raw=true";
 
       setTimeout(() => {
