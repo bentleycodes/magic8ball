@@ -30,7 +30,6 @@ ball.addEventListener("click", clearInput);
   function displayImage() {
 
     var imgArray = [];
-   // index = 0;
     imgArray[0] = new Image();
     imgArray[0].src = 'https://github.com/bentleycodes/magic8ball/blob/main/8ball-images/asiseeitball.png?raw=true',
     imgArray[1] = new Image();
@@ -65,6 +64,6 @@ ball.addEventListener("click", clearInput);
 
       setTimeout(() => {
         ball.style.visibility = 'hidden';
-      }, "9000");
+      }, "7000");
     
     }
