@@ -1,6 +1,6 @@
 // Event listener for the ask button. Includes an edge case for invalid questions & will show question + ball image.
 askbtn.addEventListener('click',function(e) {
-    if(!question.value || question.value.length < 4) {
+    if(!question.value || question.value.length < 5) {
       alert("Please provide a question.");
       e.preventDefault();
       return;
@@ -22,7 +22,7 @@ askbtn.addEventListener('click',function(e) {
   });
 
 
-// Event listener for ball; Will clear the inputs & revert ball image. Hides ball after 9 seconds.
+// Event listener for ball; Will clear the inputs & revert ball image. Reload.
 ball.addEventListener("click", clearInput);
 
 
@@ -31,23 +31,23 @@ ball.addEventListener("click", clearInput);
 
     var imgArray = [];
     imgArray[0] = new Image();
-    imgArray[0].src = 'https://github.com/bentleycodes/magic8ball/blob/main/8ball-images/asiseeitball.png?raw=true',
+    imgArray[0].src = '8ball-images/asiseeitball.png',
     imgArray[1] = new Image();
-    imgArray[1].src = 'https://github.com/bentleycodes/magic8ball/blob/main/8ball-images/askagainball.png?raw=true',
+    imgArray[1].src = '8ball-images/askagainball.png',
     imgArray[2] = new Image();
-    imgArray[2].src = 'https://github.com/bentleycodes/magic8ball/blob/main/8ball-images/cannotpredictball.png?raw=true',
+    imgArray[2].src = '8ball-images/cannotpredictball.png',
     imgArray[3] = new Image();
-    imgArray[3].src = 'https://github.com/bentleycodes/magic8ball/blob/main/8ball-images/concentrateball.png?raw=true',
+    imgArray[3].src = '8ball-images/concentrateball.png',
     imgArray[4] = new Image();
-    imgArray[4].src = 'https://github.com/bentleycodes/magic8ball/blob/main/8ball-images/dontcountball.png?raw=true',
+    imgArray[4].src = '8ball-images/dontcountball.png',
     imgArray[5] = new Image();
-    imgArray[5].src = 'https://github.com/bentleycodes/magic8ball/blob/main/8ball-images/itiscertainball.png?raw=true',
+    imgArray[5].src = '8ball-images/itiscertainball.png',
     imgArray[6] = new Image();
-    imgArray[6].src = 'https://github.com/bentleycodes/magic8ball/blob/main/8ball-images/noball.png?raw=true',
+    imgArray[6].src = '8ball-images/noball.png',
     imgArray[7] = new Image();
-    imgArray[7].src = 'https://github.com/bentleycodes/magic8ball/blob/main/8ball-images/verydoubtfulball.png?raw=true',
+    imgArray[7].src = '8ball-images/verydoubtfulball.png',
     imgArray[8] = new Image();
-    imgArray[8].src = 'https://github.com/bentleycodes/magic8ball/blob/main/8ball-images/yesball.png?raw=true';
+    imgArray[8].src = '8ball-images/yesball.png';
     
         const randomNum = Math.floor(Math.random() * (imgArray.length));
         const img = imgArray[randomNum].src;
@@ -55,15 +55,15 @@ ball.addEventListener("click", clearInput);
         ball.style.visibility = 'visible';
     }
 
-  // Function to clear input on ball image click, revert image, then hide after 9 seconds.
+  // Function to clear input on ball image click, revert image, then reload.
     function clearInput () {
       showquestion.style.visibility = 'hidden';
       question.value = "";
       askbtn.value = "ask...";
-      ball.src = "https://github.com/bentleycodes/magic8ball/blob/main/8ball-images/masterball.png?raw=true";
+      ball.src = '8ball-images/masterball.png';
 
       setTimeout(() => {
-        ball.style.visibility = 'hidden';
-      }, "7000");
+        location.reload();
+      }, "1100");
     
     }

@@ -13,18 +13,11 @@ body {
 
 }
 
- 
-#answers {
-    display: block;
-}
-
-
-
 #ball {
     display: block;
     visibility: hidden;
-    width: 400px;
-    padding-left: 500px;
+    width: 365px;
+    padding-left: 530px;
     margin-bottom: -270px;
     margin-top: -80px;
     cursor: pointer;
