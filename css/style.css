@@ -10,6 +10,7 @@ body {
     margin: auto;
     width: 75%;
     max-width: 600px;
+    padding-top: 30px;
 
 }
 
@@ -106,6 +107,7 @@ input {
   
     #fortunepng {
       width: 100%;
+      padding-top: 0px;
     }
     
     #form {
@@ -122,16 +124,19 @@ input {
       margin-left: -35px;
       font-size: 16px;
   }
+
     
     #askbtn {
       display: block;
       width: 50%;
       margin: auto;
+      font-size: 14px;
     }
     
     #showquestion {
       margin: auto;
-      margin-top: -250px;
+      margin-top: -270px;
+      margin-bottom: -100px;
       width: 100%;
       font-size: 16px;
       
@@ -141,8 +146,9 @@ input {
       margin: auto;
       width: 300px;
       padding-left: 0px;
-      padding-bottom: 0px;
+      padding-bottom: -200px;
       margin-bottom: -200px;
+      height: 30%;
   }
     
   }
